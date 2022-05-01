@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-
+import { Post } from '../post.models';
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
@@ -24,15 +24,16 @@ export class PostCreateComponent implements OnInit {
   //   this.newPost = postInput.value;
 
   // }
-
-  @Output() postCreated = new EventEmitter();
+    // We defiend the interface too on EventEmitter
+    // here we define Event Emitter work with Generic type data as Post is defined by <Post>
+  @Output() postCreated = new EventEmitter<Post>();
   newPost1:String = 'NO CONTENT';
   eteredContent:String = '';
   enterTitle:String = '';
 
   Addpost1(){
     //this.newPost1 = this.eteredContent;
-    const post = {
+    const post:Post = {
       title:this.enterTitle,
       content:this.eteredContent,
     }
