@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../post.models';
+import { PostsService } from '../posts.service';
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -7,7 +8,11 @@ import { Post } from '../post.models';
 })
 export class PostListComponent implements OnInit {
 
-  constructor() { }
+
+  // Here we define the Dependency Injection of postService to this Component Construcor
+  // And also use public keyword so ypscript add a property to this class directly without definig it like argument = this.property
+  // Example this.postsService(property)= postsService(argument)
+  constructor(public postsService:PostsService) { }
 
   ngOnInit(): void {
   }
