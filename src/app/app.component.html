@@ -1,6 +1,8 @@
 <app-header></app-header>
 <!-- <h1>Our First App</h1> -->
 <main>
-  <app-post-create></app-post-create>
-  <app-post-list></app-post-list>
+                        <!-- Using Event Emmiter here. $event is all kind of event data triger -->
+  <app-post-create (postCreated)="onPostAdded($event)"></app-post-create>
+                <!-- Property Binding -->
+  <app-post-list [posts]="storedPost"></app-post-list>
 </main>

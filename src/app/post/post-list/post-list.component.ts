@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-post-list',
@@ -18,6 +18,6 @@ export class PostListComponent implements OnInit {
   //   {title:'Second Post', content:'This is the content of Second Post'},
   //   {title:'Third Post', content:'This is the content of Third Post'},
   // ]
-  posts = [];
+  @Input() posts = [];
 
 }

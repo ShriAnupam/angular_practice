@@ -1,3 +1,7 @@
+<!--
+  Used Refernce variable to add value in Property newPost
+  Do Not Remove Code DownBelow
+ -->
 <!-- <mat-card>
   <mat-form-field>
     <textarea matInput rows="6" [value]="newPost" #postInput ></textarea>
@@ -13,10 +17,10 @@
   <mat-card-subtitle>Create new Post for user</mat-card-subtitle>
   <hr>
   <mat-form-field>
-    <input matInput type="text" [(ngModel)]="enterTitle" >
+    <input matInput type="text" [(ngModel)]="enterTitle" placeholder="Enter Title">
   </mat-form-field>
   <mat-form-field>
-    <textarea matInput rows="6" [(ngModel)]="eteredContent"  ></textarea>
+    <textarea matInput rows="6" [(ngModel)]="eteredContent"   placeholder="Enter Content"></textarea>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="Addpost1()">Save Post</button>
   <mat-card-actions align="end">
