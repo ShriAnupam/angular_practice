@@ -20,10 +20,14 @@ export class PostCreateComponent implements OnInit {
 
   }
   newPost1:String = 'NO CONTENT';
-  eteredVal:String = '';
+  eteredContent:String = '';
+  enterTitle:String = '';
 
   Addpost1(){
-    this.newPost1 = this.eteredVal;
-
+    //this.newPost1 = this.eteredContent;
+    const post = {
+      title:this.enterTitle,
+      content:this.eteredContent,
+    }
   }
 }

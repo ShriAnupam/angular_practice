@@ -11,5 +11,13 @@ export class PostListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  panelOpenState = false;
+
+  // posts = [
+  //   {title:'First Post', content:'This is the content of First Post'},
+  //   {title:'Second Post', content:'This is the content of Second Post'},
+  //   {title:'Third Post', content:'This is the content of Third Post'},
+  // ]
+  posts = [];
 
 }

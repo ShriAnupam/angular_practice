@@ -1,1 +1,23 @@
-<p>post-list works!</p>
+<mat-accordion multi="true" *ngIf="posts.length>0 else other_content">
+
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false" hideToggle
+                       *ngFor="let post of posts"
+                       >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{post.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{post.content}}</p>
+  </mat-expansion-panel>
+
+</mat-accordion>
+<ng-template #other_content>
+  <p class="info-text mat-body-1" *ngIf="posts.length <= 0 ">Posts...No Post Add Yet</p>
+</ng-template>
+
+

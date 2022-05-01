@@ -1,18 +1,28 @@
-<mat-card>
+<!-- <mat-card>
   <mat-form-field>
     <textarea matInput rows="6" [value]="newPost" #postInput ></textarea>
   </mat-form-field>
   <button mat-raised-button color="accent" (click)="Addpost(postInput)">Save Post</button>
 </mat-card>
-<span>{{ newPost }}</span>
+<span>{{ newPost }}</span> -->
 
-<hr>
+<!-- <hr> -->
 
 <mat-card>
+  <mat-card-title>Add Post</mat-card-title>
+  <mat-card-subtitle>Create new Post for user</mat-card-subtitle>
+  <hr>
   <mat-form-field>
-    <textarea matInput rows="6" [(ngModel)]="eteredVal"  ></textarea>
+    <input matInput type="text" [(ngModel)]="enterTitle" >
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="eteredContent"  ></textarea>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="Addpost1()">Save Post</button>
+  <mat-card-actions align="end">
+    <button mat-button color="warn">Like</button>
+    <button mat-button color="warn">SHARE</button>
+  </mat-card-actions>
 </mat-card>
 
-<span>{{ newPost1 }}</span>
+
