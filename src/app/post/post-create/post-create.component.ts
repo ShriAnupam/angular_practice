@@ -25,7 +25,7 @@ export class PostCreateComponent implements OnInit {
 
   // }
     // We defiend the interface too on EventEmitter
-    // here we define Event Emitter work with Generic type data as Post is defined by <Post>
+    // here we define Event Emitter work with Generic Data type as Post is defined by <Post>
   @Output() postCreated = new EventEmitter<Post>();
   newPost1:String = 'NO CONTENT';
   eteredContent:String = '';
