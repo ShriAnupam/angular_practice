@@ -15,6 +15,7 @@ export class PostListComponent implements OnInit {
   constructor(public postsService:PostsService) { }
 
   ngOnInit(): void {
+    this.posts = this.postsService.getPosts();
   }
   panelOpenState = false;
 
@@ -23,6 +24,6 @@ export class PostListComponent implements OnInit {
   //   {title:'Second Post', content:'This is the content of Second Post'},
   //   {title:'Third Post', content:'This is the content of Third Post'},
   // ]
-  @Input() posts:Post[] = [];
+  posts:Post[] = [];
 
 }

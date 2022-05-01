@@ -11,9 +11,8 @@ export class PostsService {
   private posts:Post[]=[];
 
   getPosts(){
-    // we send copy of the array to the caller
-    // we use the spread operator of javascript ec6 here
-    return [...this.posts];
+    // we send the orignal refernce var here which get manupilate
+    return this.posts;
   }
 
   addPost(title:string,content:string){
