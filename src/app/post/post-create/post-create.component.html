@@ -16,13 +16,21 @@
   <mat-card-title>Add Post</mat-card-title>
   <mat-card-subtitle>Create new Post for user</mat-card-subtitle>
   <hr>
-  <mat-form-field>
-    <input matInput type="text" [(ngModel)]="enterTitle" placeholder="Enter Title">
-  </mat-form-field>
-  <mat-form-field>
-    <textarea matInput rows="6" [(ngModel)]="eteredContent"   placeholder="Enter Content"></textarea>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="Addpost1()">Save Post</button>
+  <form (submit)="Addpost1(postForm)" #postForm="ngForm">
+    <mat-form-field>
+                            <!-- [(ngModel)]="enterTitle" -->
+      <input matInput type="text" name="title" ngModel  placeholder="Enter Title" required minlength="3" #title="ngModel">
+      <!-- <mat-error *ngIf="postForm.getControl('title').invalid">Please Enter Post title</mat-error> -->
+      <mat-error *ngIf="title.invalid">Please Enter Post title</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+                            <!-- [(ngModel)]="eteredContent"  -->
+      <textarea matInput rows="4" name="content" ngModel placeholder="Enter Content" required  #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Please Enter Post Content</mat-error>
+    </mat-form-field>
+                                        <!-- (click)="Addpost1()" -->
+    <button mat-raised-button color="primary" type="submit" >Save Post</button>
+  </form>
   <mat-card-actions align="end">
     <button mat-button color="warn">Like</button>
     <button mat-button color="warn">SHARE</button>

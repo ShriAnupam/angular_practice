@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Post } from '../post.models';
 @Component({
   selector: 'app-post-create',
@@ -26,16 +27,20 @@ export class PostCreateComponent implements OnInit {
   // }
     // We defiend the interface too on EventEmitter
     // here we define Event Emitter work with Generic Data type as Post is defined by <Post>
+
   @Output() postCreated = new EventEmitter<Post>();
   newPost1:String = 'NO CONTENT';
   eteredContent:String = '';
   enterTitle:String = '';
 
-  Addpost1(){
+  Addpost1(form:NgForm){
     //this.newPost1 = this.eteredContent;
+    if(form.invalid){
+      return;
+    }
     const post:Post = {
-      title:this.enterTitle,
-      content:this.eteredContent,
+      title:form.value.title,
+      content:form.value.content
     }
     this.postCreated.emit(post);
   }
