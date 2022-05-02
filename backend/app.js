@@ -21,6 +21,7 @@ app.use('/api/posts',(req, res, next)=>{
     message:'Posts Fetched Successfully',
     posts:posts
   });
+
 })
 
 module.exports = app;
