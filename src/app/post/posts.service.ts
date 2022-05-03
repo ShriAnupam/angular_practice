@@ -41,11 +41,16 @@ export class PostsService {
 
   addPost(title:string,content:string){
     const post: Post={id:null, title:title, content:content};
-    // After adding to main array of posts
-    this.posts.push(post);
-    // this Subject next method Emitts the new add post and send the new value to the postlist
-    // this emitts the new copy of the post after the update
-    // here we update the posts property and send an new copy
-    this.postUpdated.next([...this.posts])
+    this.http.post<{message:string}>('http://localhost:3000/api/posts',post)
+    .subscribe((responseData)=>{
+      console.log(responseData.message);
+      // After adding to main array of posts
+      this.posts.push(post);
+      // this Subject next method Emitts the new add post and send the new value to the postlist
+      // this emitts the new copy of the post after the update
+      // here we update the posts property and send an new copy
+      this.postUpdated.next([...this.posts])
+    });
+
   }
 }

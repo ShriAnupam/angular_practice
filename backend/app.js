@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.json());
+          // so it can parse url encoded data Default featue
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use((req,res,next)=>{
@@ -23,7 +24,7 @@ app.post("/api/posts",(req,res,next)=>{
 
 
 
-app.use('/api/posts',(req, res, next)=>{
+app.get('/api/posts',(req, res, next)=>{
   // res.send('Hello From Express!')
   const posts = [
     {
